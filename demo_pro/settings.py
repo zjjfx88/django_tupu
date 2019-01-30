@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webqo.apps.WebqoConfig',
     'tupush.apps.TupushConfig',
+    'tupuqo.apps.TupuqoConfig',
 ]
 
 MIDDLEWARE = [

@@ -22,4 +22,5 @@ urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'webqo/', include('webqo.urls')),
     re_path(r'tupush/', include('tupush.urls')),
+    re_path(r'tupuqo/', include('tupuqo.urls')),
 ]
