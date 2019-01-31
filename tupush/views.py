@@ -87,7 +87,7 @@ def debug(request):
                 ret['status'] = False
                 return ret
 
-            data = BeautifulSoup(resp.text)
+            data = BeautifulSoup(resp.text, "html.parser")
             ret['data'] = data.prettify()
 
         except Exception as e:
@@ -173,12 +173,12 @@ def debug_diff(request):
             ret['status'] = False
             return ret
 
-        total = BeautifulSoup(resp.text)
-        total_diff = BeautifulSoup(resp_diff.text)
+        total = BeautifulSoup(resp.text, "html.parser")
+        total_diff = BeautifulSoup(resp_diff.text, "html.parser")
 
-        jzwd = jzwd_diff = BeautifulSoup("精准问答结果为空")
-        rec = rec_diff = BeautifulSoup("右侧推荐结果为空")
-        int = int_diff = BeautifulSoup("兴趣推荐结果为空")
+        jzwd = jzwd_diff = BeautifulSoup("精准问答结果为空", "html.parser")
+        rec = rec_diff = BeautifulSoup("右侧推荐结果为空", "html.parser")
+        int = int_diff = BeautifulSoup("兴趣推荐结果为空", "html.parser")
 
         for doc in total.find_all('doc'):
             pvtype = doc.item['pvtype']
